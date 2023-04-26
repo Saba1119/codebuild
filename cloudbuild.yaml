@@ -5,15 +5,6 @@ steps:
 # push the container image to Container Registry
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'gcr.io/$PROJECT_ID/demo-app:$COMMIT_SHA']
-# copy the container image to the VM instance
-- name: 'gcr.io/cloud-builders/gcloud'
-  args:
-  - 'compute'
-  - 'scp'
-  - 'gcr.io/$PROJECT_ID/demo-app:$COMMIT_SHA'
-  - 'saba@instance-1:/home/saba/demo-app'
-  - '--zone'
-  - 'us-central1-a'
 # SSH into the VM instance and start the container
 - name: 'gcr.io/cloud-builders/gcloud'
   args:
@@ -23,6 +14,6 @@ steps:
   - '--zone'
   - 'us-central1-a'
   - '--command'
-  - 'docker run -d -p 8080:8080 gcr.io/$PROJECT_ID/demo-app:$COMMIT_SHA'
+  - 'docker pull gcr.io/$PROJECT_ID/demo-app:$COMMIT_SHA && docker run -d -p 8080:8080 gcr.io/$PROJECT_ID/demo-app:$COMMIT_SHA'
 images:
 - 'gcr.io/$PROJECT_ID/demo-app:$COMMIT_SHA'
