@@ -13,7 +13,7 @@ steps:
   - 'gcr.io/$PROJECT_ID/demo-app:$COMMIT_SHA'
   - 'instance-1:/home/myuser/demo-app'
   - '--zone'
-  - 'us-central1-c'
+  - 'us-central1-a'
 # SSH into the VM instance and start the container
 - name: 'gcr.io/cloud-builders/gcloud'
   args:
