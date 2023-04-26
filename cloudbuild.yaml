@@ -11,7 +11,7 @@ steps:
   - 'compute'
   - 'scp'
   - 'gcr.io/$PROJECT_ID/demo-app:$COMMIT_SHA'
-  - 'instance-1:/home/saba/demo-app'
+  - 'saba@instance-1:/home/saba/demo-app'
   - '--zone'
   - 'us-central1-a'
 # SSH into the VM instance and start the container
@@ -19,7 +19,7 @@ steps:
   args:
   - 'compute'
   - 'ssh'
-  - 'instance-1'
+  - 'saba@instance-1'
   - '--zone'
   - 'us-central1-a'
   - '--command'
