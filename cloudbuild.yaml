@@ -14,6 +14,6 @@ steps:
   - '--zone'
   - 'us-central1-a'
   - '--command'
-  - 'docker pull gcr.io/$PROJECT_ID/demo-app:$COMMIT_SHA && docker run -d -p 8080:8080 gcr.io/$PROJECT_ID/demo-app:$COMMIT_SHA'
+  - ' sudo docker pull gcr.io/$PROJECT_ID/demo-app:$COMMIT_SHA && docker run -d -p 8080:8080 gcr.io/$PROJECT_ID/demo-app:$COMMIT_SHA'
 images:
 - 'gcr.io/$PROJECT_ID/demo-app:$COMMIT_SHA'
