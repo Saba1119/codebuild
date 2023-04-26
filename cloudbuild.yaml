@@ -10,9 +10,9 @@ steps:
   args:
   - 'compute'
   - 'ssh'
-  - 'saba@instance-1'
+  - 'root@my-instance-vm'
   - '--zone'
-  - 'us-central1-a'
+  - 'us-central1-c'
   - '--command'
   - |
     gcloud auth print-access-token | docker login -u oauth2accesstoken --password-stdin https://gcr.io
