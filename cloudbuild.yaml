@@ -11,7 +11,7 @@ steps:
   - 'compute'
   - 'scp'
   - 'gcr.io/$PROJECT_ID/demo-app:$COMMIT_SHA'
-  - 'my-instance-vm:/home/myuser/demo-app'
+  - 'instance-1:/home/myuser/demo-app'
   - '--zone'
   - 'us-central1-c'
 # SSH into the VM instance and start the container
@@ -19,9 +19,9 @@ steps:
   args:
   - 'compute'
   - 'ssh'
-  - 'my-instance-vm'
+  - 'instance-1'
   - '--zone'
-  - 'us-central1-c'
+  - 'us-central1-a'
   - '--command'
   - 'docker run -d -p 8080:8080 gcr.io/$PROJECT_ID/demo-app:$COMMIT_SHA'
 images:
