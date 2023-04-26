@@ -12,7 +12,7 @@ steps:
   - 'scp'
   - '--tunnel-through-iap'
   - 'gcr.io/$PROJECT_ID/demo-app:$COMMIT_SHA'
-  - 'instance-1:/home/myuser/demo-app'
+  - 'instance-1:/home/saba/demo-app'
   - '--zone'
   - 'us-central1-a'
 # SSH into the VM instance and start the container
