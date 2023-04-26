@@ -10,6 +10,7 @@ steps:
   args:
   - 'compute'
   - 'scp'
+  - '--tunnel-through-iap'
   - 'gcr.io/$PROJECT_ID/demo-app:$COMMIT_SHA'
   - 'instance-1:/home/myuser/demo-app'
   - '--zone'
@@ -19,6 +20,7 @@ steps:
   args:
   - 'compute'
   - 'ssh'
+  - '--tunnel-through-iap'
   - 'instance-1'
   - '--zone'
   - 'us-central1-a'
